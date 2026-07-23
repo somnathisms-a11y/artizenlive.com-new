@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArtizenLive — Book Verified Live Event Artists, Performers &amp; Talent in India</title>
+  <meta name="description"
+    content="Discover and book verified singers, dancers, DJs, bands, emcees, and artists for weddings, corporate galas, and private celebrations across India with escrow security.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Header Navigation - Clean, Uncluttered, Spacious Layout -->
+  <header>
+    <div class="nav">
+      <a href="#" class="logo">
+        <span class="logo-mark"></span>
+        <span>ArtizenLive<small>Create Unforgettable Moments</small></span>
+      </a>
+      <nav class="links">
+        <a href="#home">Home</a>
+        <a href="#live-stage" class="nav-live-link"><span class="live-dot-inline"></span>Live Stage</a>
+        <a href="#artists">Artists</a>
+        <a href="#categories">Categories</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="about.html">About Us</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn-theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle Dark / Light Theme">
+          <span class="theme-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          </span>
+          <span class="theme-label">Dark Mode</span>
+        </button>
+        <button class="btn-primary-glow" id="openAuthModal" onclick="openAuthModal()">Login / Sign Up</button>
+        <button class="nav-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <a href="#" class="logo">
+          <span class="logo-mark"></span>
+          <span>ArtizenLive</span>
+        </a>
+        <button class="drawer-close" id="drawerClose">&times;</button>
+      </div>
+      <nav class="drawer-links">
+        <a href="#home">Home</a>
+        <a href="#live-stage" style="color:var(--rose-accent);">🔴 Live Stage Stream</a>
+        <a href="#artists">Trending Artists</a>
+        <a href="#categories">Talent Categories</a>
+        <a href="#how-it-works">How Escrow Works</a>
+        <a href="about.html">About ArtizenLive</a>
+        <a href="#blog">Industry Blog</a>
+        <a href="policies.html">Policies &amp; Legal</a>
+        <a href="#contact">Contact Support</a>
+      </nav>
+      <div class="drawer-footer">
+        <button class="btn-theme-toggle w-full" id="drawerThemeToggleBtn" onclick="toggleTheme()"
+          style="margin-bottom:12px; justify-content:center;">
+          <span class="theme-icon">
+            <svg class="theme-svg-icon moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" fill-opacity="0.2" />
+              <circle cx="18" cy="5" r="0.8" fill="currentColor" />
+            </svg>
+          </span>
+          <span class="theme-label">Dark Mode</span>
+        </button>
+        <button class="btn btn-gold w-full"
+          onclick="openBookingModal('General Event Booking', 'All Talent Categories', 'India', 25000)">Book An Artist
+          Now 🔒</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="wrap hero-inner">
+      <div class="reveal">
+        <div class="eyebrow">India's Most Trusted Talent Booking Platform ★ 4.9/5</div>
+        <h1>Book Top Artists <br>For <em>Every Event</em></h1>
+        <p class="lead">Connect directly with verified singers, live bands, Bollywood DJs, dancers, emcees, and
+          celebrity performers across India — backed by 100% escrow-locked payment security.</p>
+
+        <form class="search-panel" id="heroSearchForm" onsubmit="handleHeroSearch(event)">
+          <select id="searchCategory">
+            <option value="All">All Talent Categories</option>
+            <option value="Singers">Singers &amp; Vocalists</option>
+            <option value="Dancers">Dancers &amp; Troupes</option>
+            <option value="DJs">DJs &amp; EDM Artists</option>
+            <option value="Photographers">Cinematic Photographers</option>
+            <option value="Makeup Artists">Bridal Makeup Artists</option>
+            <option value="Influencers">Content Creators</option>
+            <option value="Anchors">Emcees &amp; Comedians</option>
+            <option value="Bands">Live Rock &amp; Fusion Bands</option>
+          </select>
+          <select id="searchLocation">
+            <option value="All">All Cities (India)</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi NCR">Delhi NCR</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Pune">Pune</option>
+            <option value="Goa">Goa</option>
+            <option value="Chennai">Chennai</option>
+          </select>
+          <button type="submit" class="btn btn-gold">Search Artists ➔</button>
+        </form>
+
+        <div class="trust-row">
+          <span>100% Background-Vetted Talent</span>
+          <span>Escrow Payment Lock</span>
+          <span>24/7 Event Concierge</span>
+          <span>Flexible Cancellation</span>
+        </div>
+      </div>
+
+      <!-- Live Streaming Video in Hero Area -->
+      <div class="hero-visual reveal">
+        <div class="hero-video-card">
+          <video autoplay loop muted playsinline
+            poster="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=800">
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+              type="video/mp4">
+          </video>
+          <div class="live-pill"><span class="live-dot"></span> Live Stage Streaming</div>
+        </div>
+        <div class="stat-card">
+          <div><strong>1,200+</strong><span>Verified Artists</span></div>
+          <div><strong>4.9/5</strong><span>Client Rating</span></div>
+          <div><strong>25+</strong><span>Major Cities</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="stat-strip reveal">
+        <div class="item"><strong>1,200+</strong><span>Artists Listed</span></div>
+        <div class="item"><strong>450+</strong><span>Events Executed</span></div>
+        <div class="item"><strong>25+</strong><span>Cities Covered</span></div>
+        <div class="item"><strong>4.9★</strong><span>Average Rating</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: ArtizenLive Stage (Live Performance Video Broadcast) -->
+  <section id="live-stage" class="live-stream-section">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="eyebrow">Real-Time Broadcast</div>
+          <h2>ArtizenLive Stage — Ongoing Live Performance Stream</h2>
+          <p>Watch real-time live performance broadcasts, soundcheck streams, and live concert acts directly from
+            verified stages across India.</p>
+        </div>
+      </div>
+
+      <div class="stream-grid reveal">
+        <!-- Real Video Stream Player -->
+        <div class="video-player-card">
+          <video id="liveStreamVideo" autoplay loop muted playsinline
+            poster="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=1000">
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+              type="video/mp4">
+          </video>
+
+          <div class="video-overlay-badge">
+            <span class="live-badge"><span class="live-dot"></span> LIVE BROADCAST</span>
+            <span class="viewer-badge">🔴 1,420 Watching Now</span>
+          </div>
+
+          <div class="video-controls-bar">
+            <div class="video-info">
+              <h4 id="streamArtistTitle">The Indie Train — Live Fusion Concert</h4>
+              <p>Performing Live at Grand Hyatt Sangeet Gala, Mumbai</p>
+            </div>
+            <button class="video-play-toggle" id="streamPlayBtn" onclick="toggleStreamPlayback()"
+              title="Pause/Play Video">⏸</button>
+          </div>
+        </div>
+
+        <!-- Stream Details & Escrow Booking -->
+        <div class="stream-details-card">
+          <div class="eyebrow" style="margin-bottom:8px;">Featured Live Act</div>
+          <h3>The Indie Train</h3>
+          <p>High-energy 5-piece rock &amp; Bollywood fusion band known for electrifying wedding sangeets and corporate
+            galas.</p>
+
+          <!-- Live Chat — Premium Redesign -->
+          <div class="live-chat-widget">
+            <div class="live-chat-header">
+              <span class="live-chat-dot"></span>
+              <span class="live-chat-title">Live Chat</span>
+              <span class="live-chat-count">1,420 viewers</span>
+            </div>
+
+            <div class="live-chat-messages" id="liveChatMessages">
+
+              <!-- Message 1 -->
+              <div class="chat-bubble-row">
+                <div class="chat-avatar" style="background: linear-gradient(135deg, #F59E0B, #EF4444);">R</div>
+                <div class="chat-bubble-content">
+                  <div class="chat-bubble-meta"><span class="chat-name">Rohan M.</span><span class="chat-time">Just
+                      now</span></div>
+                  <div class="chat-bubble-msg">That guitar solo was unreal! 🔥🔥</div>
+                </div>
+              </div>
+
+              <!-- Message 2 -->
+              <div class="chat-bubble-row">
+                <div class="chat-avatar" style="background: linear-gradient(135deg, #8B5CF6, #EC4899);">P</div>
+                <div class="chat-bubble-content">
+                  <div class="chat-bubble-meta"><span class="chat-name">Priya K.</span><span class="chat-time">2m
+                      ago</span></div>
+                  <div class="chat-bubble-msg">We booked them for next month's sangeet! Can't wait! 🎉</div>
+                </div>
+              </div>
+
+              <!-- Message 3 — Concierge Special Style -->
+              <div class="chat-bubble-row concierge-row">
+                <div class="chat-avatar concierge-avatar">A</div>
+                <div class="chat-bubble-content">
+                  <div class="chat-bubble-meta"><span class="chat-name concierge-name">✦ Artizen Concierge</span><span
+                      class="chat-time">3m ago</span></div>
+                  <div class="chat-bubble-msg concierge-msg">August &amp; September 2026 dates are open! 🗓 Book via
+                    escrow now — zero risk guaranteed.</div>
+                </div>
+              </div>
+
+              <!-- Message 4 -->
+              <div class="chat-bubble-row">
+                <div class="chat-avatar" style="background: linear-gradient(135deg, #10B981, #3B82F6);">S</div>
+                <div class="chat-bubble-content">
+                  <div class="chat-bubble-meta"><span class="chat-name">Sonal V.</span><span class="chat-time">4m
+                      ago</span></div>
+                  <div class="chat-bubble-msg">Absolutely mind-blowing energy on stage! 🎸</div>
+                </div>
+              </div>
+
+              <!-- Typing Indicator -->
+              <div class="chat-typing-row">
+                <div class="chat-avatar" style="background: linear-gradient(135deg, #F59E0B, #EF4444); opacity:0.6;">K
+                </div>
+                <div class="chat-typing-indicator">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Chat Input Bar -->
+            <div class="live-chat-input-bar">
+              <input type="text" class="live-chat-input" placeholder="Say something nice... 💬" maxlength="80">
+              <button class="live-chat-send" onclick="sendChatMessage(this)">↑</button>
+            </div>
+          </div>
+
+          <button class="btn btn-gold w-full"
+            onclick="openBookingModal('The Indie Train', '5-Piece Fusion Rock Band', 'Mumbai, MH', 30000)">Book This
+            Live Act Now 🔒</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="wrap">
+      <div class="about-grid reveal">
+        <div class="about-text">
+          <div class="eyebrow">About ArtizenLive</div>
+          <h2>Empowering Talent, Elevating Celebrations</h2>
+          <p>ArtizenLive is India's premier tech-enabled talent marketplace connecting event hosts, wedding planners,
+            and corporate organizers directly with background-verified live performers.</p>
+          <p>From intimate sangeet nights to grand corporate galas and music festivals, our transparent escrow engine
+            guarantees hassle-free booking execution, technical rider confirmation, and 100% payment safety.</p>
+
+          <div class="about-features">
+            <div class="af-item">
+              <div class="af-icon">🛡️</div>
+              <div>
+                <h4>Escrow-Protected Payment Security</h4>
+                <p>Your performance fee is safely locked in escrow and released to the artist only after successful
+                  event execution.</p>
+              </div>
+            </div>
+            <div class="af-item">
+              <div class="af-icon">⚡</div>
+              <div>
+                <h4>Direct Sound Rider &amp; Track Customization</h4>
+                <p>Chat directly with performers after booking confirmation to tailor song setlists, stage technical
+                  specs, and timelines.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Video Card in About Section -->
+        <div class="about-video-card">
+          <video autoplay loop muted playsinline
+            poster="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800">
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+              type="video/mp4">
+          </video>
+          <div class="banner-badge">
+            <span>Trusted by 10,000+ Couples &amp; Corporate Directors across 25+ Cities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section id="categories">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="eyebrow">Explore</div>
+          <h2>Top Talent Categories</h2>
+          <p>Browse background-checked artists by performance category across India.</p>
+        </div>
+        <a href="#artists" class="view-all" onclick="filterArtists('All')">View All Categories ➔</a>
+      </div>
+
+      <div class="cat-grid">
+        <div class="cat-card reveal" onclick="filterArtists('Singers')" style="cursor:pointer;">
+          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=500"
+            alt="Singers">
+          <div class="cat-info"><span>1,200+ Listed</span>
+            <h3>Singers &amp; Vocalists</h3>
+            <p>Acoustic soloists, Bollywood playback singers &amp; Sufi vocalists</p>
+          </div>
+        </div>
+        <div class="cat-card reveal" onclick="filterArtists('Dancers')" style="cursor:pointer;">
+          <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80&w=500"
+            alt="Dancers">
+          <div class="cat-info"><span>800+ Listed</span>
+            <h3>Dancers &amp; Troupes</h3>
+            <p>Bollywood, contemporary &amp; traditional flash mobs</p>
+          </div>
+        </div>
+        <div class="cat-card reveal" onclick="filterArtists('DJs')" style="cursor:pointer;">
+          <img src="images/dj_edm_producer.png" alt="DJs &amp; EDM Producers">
+          <div class="cat-info"><span>950+ Listed</span>
+            <h3>DJs &amp; EDM Producers</h3>
+            <p>Club DJs, commercial Bollywood &amp; Punjabi mixmasters</p>
+          </div>
+        </div>
+        <div class="cat-card reveal" onclick="filterArtists('Photographers')" style="cursor:pointer;">
+          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=500"
+            alt="Photographers">
+          <div class="cat-info"><span>1,100+ Listed</span>
+            <h3>Cinematic Photographers</h3>
+            <p>Candid wedding shooters &amp; fashion cinematographers</p>
+          </div>
+        </div>
+        <div class="cat-card reveal" onclick="filterArtists('Makeup Artists')" style="cursor:pointer;">
+          <img src="images/bridal_makeup_artist.png" alt="Bridal Makeup Artists">
+          <div class="cat-info"><span>600+ Listed</span>
+            <h3>Bridal Makeup Artists</h3>
+            <p>HD airbrush, glam &amp; celebrity makeup designers</p>
+          </div>
+        </div>
+        <div class="cat-card reveal" onclick="filterArtists('Influencers')" style="cursor:pointer;">
+          <img src="images/content_creator.png" alt="Content Creators">
+          <div class="cat-info"><span>450+ Listed</span>
+            <h3>Content Creators</h3>
+            <p>Lifestyle influencers, models &amp; brand ambassadors</p>
+          </div>
+        </div>
+        <div class="cat-card reveal" onclick="filterArtists('Anchors')" style="cursor:pointer;">
+          <img src="images/emcee_comedian.png" alt="Emcees &amp; Comedians">
+          <div class="cat-info"><span>300+ Listed</span>
+            <h3>Emcees &amp; Comedians</h3>
+            <p>Bilingual event hosts, anchors &amp; standup performers</p>
+          </div>
+        </div>
+        <div class="cat-card reveal" onclick="filterArtists('Bands')" style="cursor:pointer;">
+          <img src="images/rock_fusion_band.png" alt="Live Rock &amp; Fusion Bands">
+          <div class="cat-info"><span>500+ Listed</span>
+            <h3>Live Rock &amp; Fusion Bands</h3>
+            <p>Full-ensemble rock, acoustic &amp; Sufi fusion bands</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trending Artists Section -->
+  <section id="artists">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="eyebrow">Featured Talent</div>
+          <h2>Trending Artists</h2>
+          <p>India's highest-rated event performers ready to book for your function.</p>
+        </div>
+      </div>
+
+      <!-- Filter Pills — Full Width Row -->
+      <div class="filter-pills-bar reveal" id="categoryFilterPills">
+        <button class="pill active" onclick="filterArtists('All')">🎭 All Talent <span
+            class="pill-count">8+</span></button>
+        <button class="pill" onclick="filterArtists('Singers')">🎤 Singers <span
+            class="pill-count">1,200+</span></button>
+        <button class="pill" onclick="filterArtists('DJs')">🎧 DJs <span class="pill-count">950+</span></button>
+        <button class="pill" onclick="filterArtists('Dancers')">💃 Dancers <span class="pill-count">800+</span></button>
+        <button class="pill" onclick="filterArtists('Photographers')">📸 Photographers <span
+            class="pill-count">1,100+</span></button>
+        <button class="pill" onclick="filterArtists('Bands')">🎸 Bands <span class="pill-count">500+</span></button>
+        <button class="pill" onclick="filterArtists('Makeup Artists')">💄 Makeup Artists <span
+            class="pill-count">600+</span></button>
+      </div>
+
+      <!-- Active Filter Indicator -->
+      <div class="active-filter-indicator" id="filterStatus" style="display:none;">
+        <span>Showing filtered results for: <strong id="filterText">All</strong></span>
+        <button onclick="filterArtists('All')" class="btn-text">Reset Filter ✕</button>
+      </div>
+
+      <div class="carousel" id="artistsCarousel">
+        <!-- Kabir Sen -->
+        <div class="artist-card" data-category="Singers" data-location="Mumbai">
+          <div class="artist-photo">
+            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=500"
+              alt="Kabir Sen">
+            <span class="badge-verified">Verified Talent</span>
+            <button class="media-play-btn" title="Listen Demo"
+              onclick="playAudioSample('Kabir Sen', 'Acoustic Pop &amp; Bollywood Medley')">▶ Demo</button>
+          </div>
+          <div class="artist-body">
+            <h4>Kabir Sen</h4>
+            <div class="artist-role">Singer-Guitarist</div>
+            <div class="artist-meta"><span>Mumbai, MH</span><span>4.9 ★ (256)</span></div>
+            <div class="artist-foot">
+              <div class="artist-price">From<strong>₹25,000</strong></div>
+              <button class="mini-btn"
+                onclick="openBookingModal('Kabir Sen', 'Singer-Guitarist', 'Mumbai, MH', 25000)">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sneha Iyer -->
+        <div class="artist-card" data-category="Singers" data-location="Kolkata">
+          <div class="artist-photo">
+            <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80&w=500"
+              alt="Sneha Iyer">
+            <span class="badge-verified">Verified Talent</span>
+            <button class="media-play-btn" title="Listen Demo"
+              onclick="playAudioSample('Sneha Iyer', 'Sufi &amp; Semi-Classical Fusion')">▶ Demo</button>
+          </div>
+          <div class="artist-body">
+            <h4>Sneha Iyer</h4>
+            <div class="artist-role">Playback Singer</div>
+            <div class="artist-meta"><span>Kolkata, WB</span><span>5.0 ★ (420)</span></div>
+            <div class="artist-foot">
+              <div class="artist-price">From<strong>₹35,000</strong></div>
+              <button class="mini-btn"
+                onclick="openBookingModal('Sneha Iyer', 'Playback Singer', 'Kolkata, WB', 35000)">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- DJ Aarav -->
+        <div class="artist-card" data-category="DJs" data-location="Delhi NCR">
+          <div class="artist-photo">
+            <img src="images/dj_edm_producer.png" alt="DJ Aarav">
+            <span class="badge-verified">Verified Talent</span>
+            <button class="media-play-btn" title="Listen Demo"
+              onclick="playAudioSample('DJ Aarav', 'High Energy Club &amp; Wedding Mix')">▶ Demo</button>
+          </div>
+          <div class="artist-body">
+            <h4>DJ Aarav</h4>
+            <div class="artist-role">Bollywood / Commercial DJ</div>
+            <div class="artist-meta"><span>Delhi NCR</span><span>4.8 ★ (189)</span></div>
+            <div class="artist-foot">
+              <div class="artist-price">From<strong>₹18,000</strong></div>
+              <button class="mini-btn"
+                onclick="openBookingModal('DJ Aarav', 'Bollywood / Commercial DJ', 'Delhi NCR', 18000)">Book
+                Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Neha Malhotra -->
+        <div class="artist-card" data-category="Makeup Artists" data-location="Mumbai">
+          <div class="artist-photo">
+            <img src="images/neha_malhotra.png" alt="Neha Malhotra">
+            <span class="badge-verified">Verified Talent</span>
+            <button class="media-play-btn" title="View Portfolio"
+              onclick="playAudioSample('Neha Malhotra', 'HD Airbrush Bridal Portfolio')">📷 Portfolio</button>
+          </div>
+          <div class="artist-body">
+            <h4>Neha Malhotra</h4>
+            <div class="artist-role">Bridal Makeup Specialist</div>
+            <div class="artist-meta"><span>Mumbai, MH</span><span>4.9 ★ (312)</span></div>
+            <div class="artist-foot">
+              <div class="artist-price">From<strong>₹12,000</strong></div>
+              <button class="mini-btn"
+                onclick="openBookingModal('Neha Malhotra', 'Bridal Makeup Specialist', 'Mumbai, MH', 12000)">Book
+                Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aura Dance Troupe -->
+        <div class="artist-card" data-category="Dancers" data-location="Mumbai">
+          <div class="artist-photo">
+            <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80&w=500"
+              alt="Aura Dance Troupe">
+            <span class="badge-verified">Verified Talent</span>
+            <button class="media-play-btn" title="Watch Showreel"
+              onclick="playAudioSample('Aura Dance Troupe', 'Sangeet Choreography Showreel')">▶ Video</button>
+          </div>
+          <div class="artist-body">
+            <h4>Aura Dance Troupe</h4>
+            <div class="artist-role">Group Dancers</div>
+            <div class="artist-meta"><span>Mumbai, MH</span><span>4.9 ★ (204)</span></div>
+            <div class="artist-foot">
+              <div class="artist-price">From<strong>₹50,000</strong></div>
+              <button class="mini-btn"
+                onclick="openBookingModal('Aura Dance Troupe', 'Group Dancers', 'Mumbai, MH', 50000)">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Snap Moments -->
+        <div class="artist-card" data-category="Photographers" data-location="Kolkata">
+          <div class="artist-photo">
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=500"
+              alt="Snap Moments">
+            <span class="badge-verified">Verified Talent</span>
+            <button class="media-play-btn" title="View Gallery"
+              onclick="playAudioSample('Snap Moments', 'Cinematic Wedding Teasers')">📷 Gallery</button>
+          </div>
+          <div class="artist-body">
+            <h4>Snap Moments</h4>
+            <div class="artist-role">Candid Wedding Photographer</div>
+            <div class="artist-meta"><span>Kolkata, WB</span><span>4.8 ★ (221)</span></div>
+            <div class="artist-foot">
+              <div class="artist-price">From<strong>₹20,000</strong></div>
+              <button class="mini-btn"
+                onclick="openBookingModal('Snap Moments', 'Candid Wedding Photographer', 'Kolkata, WB', 20000)">Book
+                Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Varun Paul -->
+        <div class="artist-card" data-category="Anchors" data-location="Mumbai">
+          <div class="artist-photo">
+            <img src="images/emcee_comedian.png" alt="Varun Paul">
+            <span class="badge-verified">Verified Talent</span>
+            <button class="media-play-btn" title="Watch Showreel"
+              onclick="playAudioSample('Varun Paul', 'Corporate &amp; Wedding Emcee Reel')">▶ Video</button>
+          </div>
+          <div class="artist-body">
+            <h4>Varun Paul</h4>
+            <div class="artist-role">Celebrity Host / Comedian</div>
+            <div class="artist-meta"><span>Mumbai, MH</span><span>4.9 ★ (140)</span></div>
+            <div class="artist-foot">
+              <div class="artist-price">From<strong>₹18,000</strong></div>
+              <button class="mini-btn"
+                onclick="openBookingModal('Varun Paul', 'Celebrity Host / Comedian', 'Mumbai, MH', 18000)">Book
+                Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Indie Train -->
+        <div class="artist-card" data-category="Bands" data-location="Delhi NCR">
+          <div class="artist-photo">
+            <img src="images/rock_fusion_band.png" alt="The Indie Train">
+            <span class="badge-verified">Verified Talent</span>
+            <button class="media-play-btn" title="Listen Demo"
+              onclick="playAudioSample('The Indie Train', 'Indie Rock &amp; Hindi Fusion Track')">▶ Demo</button>
+          </div>
+          <div class="artist-body">
+            <h4>The Indie Train</h4>
+            <div class="artist-role">Rock Band</div>
+            <div class="artist-meta"><span>Delhi NCR</span><span>5.0 ★ (380)</span></div>
+            <div class="artist-foot">
+              <div class="artist-price">From<strong>₹30,000</strong></div>
+              <button class="mini-btn"
+                onclick="openBookingModal('The Indie Train', 'Rock Band', 'Delhi NCR', 30000)">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="eyebrow">Transparent Process</div>
+          <h2>How Escrow Booking Works</h2>
+          <p>Securing elite event talent is effortless, transparent, and financial-risk-free.</p>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="step-num">01</span>
+          <h4>Discover</h4>
+          <p>Explore vetted artist portfolios, video showreels, setlists, and verified client ratings.</p>
+        </div>
+        <div class="step reveal"><span class="step-num">02</span>
+          <h4>Request</h4>
+          <p>Submit your event date, venue city, and performance requirements directly to the performer.</p>
+        </div>
+        <div class="step reveal"><span class="step-num">03</span>
+          <h4>Escrow Lock</h4>
+          <p>Confirm booking with secure payment locked in escrow until performance completion.</p>
+        </div>
+        <div class="step reveal"><span class="step-num">04</span>
+          <h4>Celebrate</h4>
+          <p>Your event comes alive with 24/7 dedicated Artizen concierge support on standby.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantees Section -->
+  <section id="guarantees">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="eyebrow">Our Guarantees</div>
+          <h2>Why Book With ArtizenLive</h2>
+          <p>Unmatched trust standards for couples, corporate planners, and event producers.</p>
+        </div>
+      </div>
+      <div class="guarantee-grid reveal">
+        <div class="guarantee">
+          <div class="icon">✓</div>
+          <h4>100% Vetted Artists</h4>
+          <p>Background checked, technical sound riders verified, and auditioned by our auditing panel.</p>
+        </div>
+        <div class="guarantee">
+          <div class="icon">🔒</div>
+          <h4>Escrow Protection</h4>
+          <p>Funds remain securely held in escrow and release only after successful event execution.</p>
+        </div>
+        <div class="guarantee">
+          <div class="icon">💬</div>
+          <h4>Direct Setlist Chat</h4>
+          <p>Communicate directly with performers after confirmation to fine-tune songs and timelines.</p>
+        </div>
+        <div class="guarantee">
+          <div class="icon">◎</div>
+          <h4>Zero Hidden Fees</h4>
+          <p>Clear, transparent pricing without last-minute commission markups.</p>
+        </div>
+        <div class="guarantee">
+          <div class="icon">☎</div>
+          <h4>Dedicated Concierge</h4>
+          <p>24/7 on-call event managers ready to coordinate replacement logistics if emergencies occur.</p>
+        </div>
+        <div class="guarantee">
+          <div class="icon">↺</div>
+          <h4>Flexible Refunds</h4>
+          <p>Clear cancellation terms offering buffer refunds if event plans change.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="eyebrow">Client Reviews</div>
+          <h2>What Our Event Hosts Say</h2>
+          <p>Genuine feedback from couples, corporate event directors, and fest organizers.</p>
+        </div>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <span class="quote-mark">"</span>
+          <p class="body">We booked a contemporary dance troupe and a DJ for our Sangeet in Kolkata. The artists arrived
+            early, performed amazingly, and the escrow payment gave us complete peace of mind.</p>
+          <div class="testi-person">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150"
+              alt="Soumya Bhattacharya">
+            <div><strong>Soumya Bhattacharya</strong><span>Groom, Sangeet Ceremony in Kolkata</span></div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <span class="quote-mark">"</span>
+          <p class="body">Finding a reliable bilingual emcee last minute was daunting until ArtizenLive. The anchor was
+            exceptionally professional and captivated the audience seamlessly.</p>
+          <div class="testi-person">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=150"
+              alt="Aditi Desai">
+            <div><strong>Aditi Desai</strong><span>Event Director, Product Launch Gala</span></div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <span class="quote-mark">"</span>
+          <p class="body">I booked an acoustic fusion band for my parents' 25th anniversary dinner. They played retro
+            classics beautifully and customized setlists according to our guest requests.</p>
+          <div class="testi-person">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
+              alt="Ananya Chatterjee">
+            <div><strong>Ananya Chatterjee</strong><span>Party Host, Mumbai</span></div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <span class="quote-mark">"</span>
+          <p class="body">We secured a headline DJ for our annual fest. Transparent pricing and direct artist rider
+            communication made execution effortless — over 3,000 students went wild!</p>
+          <div class="testi-person">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150"
+              alt="Karan Singhania">
+            <div><strong>Karan Singhania</strong><span>Cultural Head, College Festival</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="eyebrow">Guides &amp; Trends</div>
+          <h2>Latest From Our Industry Blog</h2>
+          <p>Expert booking advice, sangeet planning guides, and live music trends.</p>
+        </div>
+        <a href="blog.html" class="view-all">View All Articles &amp; VIP Guides ➔</a>
+      </div>
+      <div class="blog-grid">
+        <div class="blog-card reveal" onclick="openBlogModal('wedding-singer')">
+          <div class="blog-photo"><img
+              src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&q=80&w=500"
+              alt="Wedding singer"></div>
+          <div class="blog-body"><span class="blog-tag">Event Tips</span>
+            <div class="blog-meta">May 12, 2026 · 5 min read</div>
+            <h4>How To Book The Perfect Wedding Singer</h4>
+            <p>Verify performance clips, outline sangeet requirements, and sign booking contracts with confidence.</p>
+            <span class="blog-read">Read Full Article ➔</span>
+          </div>
+        </div>
+        <div class="blog-card reveal" onclick="openBlogModal('right-dj')">
+          <div class="blog-photo"><img src="images/dj_edm_producer.png" alt="DJ party"></div>
+          <div class="blog-body"><span class="blog-tag">Music Guide</span>
+            <div class="blog-meta">May 10, 2026 · 4 min read</div>
+            <h4>Choosing The Right DJ For Your Party</h4>
+            <p>Match your guest demographics to the perfect DJ artist and pack the dance floor all night.</p>
+            <span class="blog-read">Read Full Article ➔</span>
+          </div>
+        </div>
+        <div class="blog-card reveal" onclick="openBlogModal('trends-2026')">
+          <div class="blog-photo"><img src="images/rock_fusion_band.png" alt="Live music trends"></div>
+          <div class="blog-body"><span class="blog-tag">Industry News</span>
+            <div class="blog-meta">May 8, 2026 · 6 min read</div>
+            <h4>Top Event Entertainment Trends in 2026</h4>
+            <p>Sufi fusion bands, acoustic sets, and immersive audio-visual DJ sets dominate this wedding season.</p>
+            <span class="blog-read">Read Full Article ➔</span>
+          </div>
+        </div>
+        <div class="blog-card reveal" onclick="openBlogModal('gala-success')">
+          <div class="blog-photo"><img src="images/emcee_comedian.png" alt="Success story"></div>
+          <div class="blog-body"><span class="blog-tag">Success Story</span>
+            <div class="blog-meta">May 5, 2026 · 4 min read</div>
+            <h4>How ArtizenLive Made My Gala Memorable</h4>
+            <p>A behind-the-scenes look at connecting a corporate client with verified musicians via escrow.</p>
+            <span class="blog-read">Read Full Article ➔</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="eyebrow">Get In Touch</div>
+          <h2>Contact Our Event Concierge</h2>
+          <p>Have specific artist inquiries or custom technical requirements? Write to us.</p>
+        </div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="item">
+            <div class="ico">☎</div>
+            <div>
+              <h4>Call Concierge Hotline</h4>
+              <p>Speak directly with our event managers.</p><a href="tel:+916293755369">+91 62937 55369</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ico">✉</div>
+            <div>
+              <h4>Email Support</h4>
+              <p>Send custom artist riders or corporate proposals.</p><a
+                href="mailto:hello@artizenlive.com">hello@artizenlive.com</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ico">📍</div>
+            <div>
+              <h4>Operations Headquarters</h4>
+              <p>ArtizenLive Verification &amp; Auditing Cell.</p>
+              <p>Kolkata, West Bengal – 700108, India</p>
+            </div>
+          </div>
+        </div>
+        <form class="form-card reveal" id="contactForm" onsubmit="handleContactSubmit(event)">
+          <div class="form-grid">
+            <input type="text" id="contactName" placeholder="Your Name" required>
+            <input type="tel" id="contactPhone" placeholder="Phone Number" required>
+          </div>
+          <input type="email" id="contactEmail" placeholder="Email Address" required>
+          <select id="contactSubject">
+            <option value="Artist Booking Inquiry">Artist Booking Inquiry</option>
+            <option value="Escrow Support &amp; Security">Escrow Support &amp; Security</option>
+            <option value="Artist Registration &amp; Verification">Artist Registration &amp; Verification</option>
+            <option value="Corporate Partnership Proposals">Corporate Partnership Proposals</option>
+          </select>
+          <textarea id="contactMessage" placeholder="Describe your event date, city, and performance requirements..."
+            required></textarea>
+          <button class="btn btn-gold" type="submit">Send Inquiry ➔</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section>
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <div class="eyebrow" style="justify-content:center;">Planning An Event?</div>
+        <h2>We Have The Perfect Verified Artist For You!</h2>
+        <p>From grand weddings and sangeet functions to corporate galas, product launches, and private music concerts —
+          we've got you covered.</p>
+        <button onclick="openBookingModal('General Event Booking', 'All Categories', 'India', 25000)"
+          class="btn btn-gold">Book Artist Now 🔒</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clean & Well-Planned Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <!-- Col 1: Brand & Socials -->
+        <div class="foot-brand">
+          <a href="#" class="logo"><span class="logo-mark"></span><span>ArtizenLive</span></a>
+          <p>India's leading platform to discover, connect, and book verified artists for weddings, corporate galas, and
+            private celebrations with escrow security.</p>
+
+          <!-- Social Media Brand Icons -->
+          <div class="social-row">
+            <a href="https://facebook.com" target="_blank" class="social-icon-btn facebook" title="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-icon-btn instagram" title="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="social-icon-btn linkedin" title="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" class="social-icon-btn youtube" title="YouTube">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Company & Platform -->
+        <div>
+          <h4>Company &amp; Platform</h4>
+          <ul>
+            <li><a href="about.html">About ArtizenLive</a></li>
+            <li><a href="#how-it-works">How Escrow Works</a></li>
+            <li><a href="#artists">Verified Artist Catalog</a></li>
+            <li><a href="blog.html">Industry Blog &amp; VIP Masterclasses</a></li>
+            <li><a href="#contact">Contact Concierge</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Policies & Legal -->
+        <div>
+          <h4>Policies &amp; Legal</h4>
+          <ul>
+            <li><a href="policies.html">📜 Policies &amp; Legal Center</a></li>
+            <li><a href="policies.html#privacy">🔒 Privacy Policy</a></li>
+            <li><a href="policies.html#escrow">🛡️ Escrow Guarantee Policy</a></li>
+            <li><a href="policies.html#refund">↺ Refund &amp; Cancellation</a></li>
+            <li><a href="policies.html#terms">📄 Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Top Talent Categories -->
+        <div>
+          <h4>Talent Categories</h4>
+          <ul>
+            <li><a href="#artists" onclick="filterArtists('Singers')">Singers &amp; Vocalists</a></li>
+            <li><a href="#artists" onclick="filterArtists('DJs')">DJs &amp; EDM Producers</a></li>
+            <li><a href="#artists" onclick="filterArtists('Dancers')">Dancers &amp; Troupes</a></li>
+            <li><a href="#artists" onclick="filterArtists('Bands')">Rock &amp; Fusion Bands</a></li>
+            <li><a href="#artists" onclick="filterArtists('Photographers')">Cinematic Shooters</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="foot-bottom">
+        <span>© 2026 ArtizenLive. All rights reserved.</span>
+        <span>Kolkata, West Bengal – 700108, India</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Booking Modal -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-backdrop" onclick="closeBookingModal()"></div>
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+      <div class="modal-header">
+        <span class="eyebrow" style="margin-bottom:4px;">100% Escrow Protection Guarantee</span>
+        <h3 id="modalArtistName">Book Kabir Sen</h3>
+        <p id="modalArtistRole" style="color:var(--violet-primary); font-weight:600; margin:0 0 16px;">Singer-Guitarist
+          • Mumbai, MH</p>
+      </div>
+      <form id="bookingForm" onsubmit="submitBooking(event)">
+        <div class="modal-grid">
+          <div class="form-group">
+            <label>Event Date</label>
+            <input type="date" id="bookDate" required>
+          </div>
+          <div class="form-group">
+            <label>Event Type</label>
+            <select id="bookEventType" required>
+              <option value="Wedding / Sangeet Ceremony">Wedding / Sangeet Ceremony</option>
+              <option value="Corporate Gala / Annual Night">Corporate Gala / Annual Night</option>
+              <option value="Private Birthday / Party">Private Birthday / Party</option>
+              <option value="College Cultural Festival">College Cultural Festival</option>
+              <option value="Public Concert / Festival">Public Concert / Festival</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-grid">
+          <div class="form-group">
+            <label>Venue City / Address</label>
+            <input type="text" id="bookVenue" placeholder="e.g. Taj Hotel, Mumbai" required>
+          </div>
+          <div class="form-group">
+            <label>Approx. Guest Count</label>
+            <input type="number" id="bookGuests" placeholder="e.g. 250" required>
+          </div>
+        </div>
+        <div class="modal-grid">
+          <div class="form-group">
+            <label>Your Full Name</label>
+            <input type="text" id="bookClientName" placeholder="Full Name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="bookClientPhone" placeholder="+91 98765 43210" required>
+          </div>
+        </div>
+
+        <!-- Price Breakdown -->
+        <div class="price-breakdown">
+          <div class="pb-row"><span>Base Performance Fee</span><span id="pbBasePrice">₹25,000</span></div>
+          <div class="pb-row"><span>Escrow Security Deposit (Included)</span><span>₹0</span></div>
+          <div class="pb-row pb-total"><span>Total Payable via Escrow</span><span id="pbTotalPrice">₹25,000</span></div>
+        </div>
+
+        <button type="submit" class="btn btn-gold w-full" style="margin-top:16px;">Confirm Booking &amp; Lock Escrow
+          🔒</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Audio Demo Player Modal -->
+  <div class="modal" id="demoModal">
+    <div class="modal-backdrop" onclick="closeDemoModal()"></div>
+    <div class="modal-card" style="text-align:center;">
+      <button class="modal-close" onclick="closeDemoModal()">&times;</button>
+      <div class="media-icon-badge">🎵</div>
+      <h3 id="demoArtistName">Kabir Sen</h3>
+      <p id="demoTrackTitle" style="color:var(--text-muted); font-size:0.9rem; margin-bottom:20px;">Acoustic Pop &amp;
+        Bollywood Medley</p>
+
+      <div class="audio-visualizer">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <div style="margin-top:24px;">
+        <button class="btn btn-violet" id="demoPlayBtn" onclick="toggleDemoPlayback()">Pause Sample ⏸</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Auth Modal (Login/Signup) -->
+  <div class="modal" id="authModal">
+    <div class="modal-backdrop" onclick="closeAuthModal()"></div>
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeAuthModal()">&times;</button>
+      <div style="text-align:center; margin-bottom:24px;">
+        <span class="logo-mark" style="margin:0 auto 12px;"></span>
+        <h3>Welcome to ArtizenLive</h3>
+        <p style="color:var(--text-muted); font-size:0.88rem;">Login or register to manage your event talent bookings
+        </p>
+      </div>
+      <form onsubmit="handleAuthSubmit(event)">
+        <input type="email" placeholder="Email Address"
+          style="width:100%; padding:14px; margin-bottom:12px; border-radius:10px; border:1px solid var(--card-border); background:var(--input-bg); color:var(--text-bright);"
+          required>
+        <input type="password" placeholder="Password"
+          style="width:100%; padding:14px; margin-bottom:20px; border-radius:10px; border:1px solid var(--card-border); background:var(--input-bg); color:var(--text-bright);"
+          required>
+        <button type="submit" class="btn btn-gold w-full">Sign In / Continue</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Policies Modal -->
+  <div class="modal" id="policyModal">
+    <div class="modal-backdrop" onclick="closePolicyModal()"></div>
+    <div class="modal-card">
+      <button class="modal-close" onclick="closePolicyModal()">&times;</button>
+
+      <div class="policy-nav-tabs">
+        <button class="policy-tab active" id="tab-privacy" onclick="switchPolicyTab('privacy')">Privacy Policy</button>
+        <button class="policy-tab" id="tab-escrow" onclick="switchPolicyTab('escrow')">Escrow Guarantee</button>
+        <button class="policy-tab" id="tab-refund" onclick="switchPolicyTab('refund')">Refund Policy</button>
+        <button class="policy-tab" id="tab-terms" onclick="switchPolicyTab('terms')">Terms &amp; Conditions</button>
+      </div>
+
+      <div class="policy-content-box" id="policyContentBox">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Editorial Blog Reader Modal -->
+  <div class="modal" id="blogModal">
+    <div class="modal-backdrop" onclick="closeBlogModal()"></div>
+    <div class="modal-card blog-modal-card">
+      <button class="modal-close" onclick="closeBlogModal()">&times;</button>
+
+      <div class="blog-modal-header">
+        <div class="blog-modal-meta-bar">
+          <span class="blog-modal-tag" id="blogModalTag">Event Tips</span>
+          <span class="blog-modal-date" id="blogModalDate">May 12, 2026 · 5 min read</span>
+        </div>
+        <h2 class="blog-modal-title" id="blogModalTitle">How To Book The Perfect Wedding Singer</h2>
+
+        <div class="blog-author-box">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200"
+            alt="Author" class="blog-author-img" id="blogModalAuthorImg">
+          <div>
+            <div class="blog-author-name" id="blogModalAuthorName">Aanya Sharma</div>
+            <div class="blog-author-role" id="blogModalAuthorRole">Senior Event Producer</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-cover-wrapper">
+        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=800"
+          alt="Cover" class="blog-cover-img" id="blogModalCover">
+      </div>
+
+      <div class="blog-article-body" id="blogModalContent">
+        <!-- Dynamically injected via script.js -->
+      </div>
+
+      <div class="blog-modal-footer">
+        <span style="font-size:0.88rem; color:var(--text-muted);">Looking to book performers for your upcoming
+          date?</span>
+        <button class="btn btn-gold" id="blogModalCtaBtn">Explore Verified Talent 🔒</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

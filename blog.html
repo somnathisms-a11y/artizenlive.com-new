@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editorial Blog & VIP Masterclasses | ArtizenLive</title>
+  <meta name="description" content="Discover expert event planning guides, live music trends, technical sound rider masterclasses, and lawyer-drafted escrow contract templates on ArtizenLive.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>ArtizenLive<small>Create Unforgettable Moments</small></span>
+      </a>
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="index.html#live-stage" class="nav-live-link"><span class="live-dot-inline"></span>Live Stage</a>
+        <a href="index.html#artists">Artists</a>
+        <a href="index.html#categories">Categories</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="about.html">About Us</a>
+        <a href="blog.html" style="color:var(--violet-primary); font-weight:800;">Blog</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn-theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle Dark / Light Theme">
+          <span class="theme-icon">
+            <svg class="theme-svg-icon moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" fill-opacity="0.2"/><circle cx="18" cy="5" r="0.8" fill="currentColor"/></svg>
+          </span>
+          <span class="theme-label">Dark Mode</span>
+        </button>
+        <button class="btn-primary-glow" onclick="openAuthModal()">Login / Sign Up</button>
+        <button class="nav-toggle" id="menuToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <a href="index.html" class="logo"><span class="logo-mark"></span><span>ArtizenLive</span></a>
+        <button class="drawer-close" id="drawerClose">&times;</button>
+      </div>
+      <nav class="drawer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#live-stage" style="color:var(--rose-accent);">🔴 Live Stage</a>
+        <a href="index.html#artists">Artists</a>
+        <a href="index.html#categories">Categories</a>
+        <a href="about.html">About Us</a>
+        <a href="blog.html" style="color:var(--violet-primary); font-weight:800;">Blog Hub</a>
+        <a href="policies.html">Policies &amp; Legal</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="drawer-footer">
+        <button class="btn-theme-toggle w-full" id="drawerThemeToggleBtn" onclick="toggleTheme()" style="margin-bottom:12px; justify-content:center;">
+          <span class="theme-icon">
+            <svg class="theme-svg-icon moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" fill-opacity="0.2"/><circle cx="18" cy="5" r="0.8" fill="currentColor"/></svg>
+          </span>
+          <span class="theme-label">Dark Mode</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="wrap" style="text-align:center;">
+      <div class="eyebrow" style="justify-content:center;">ArtizenLive Insights</div>
+      <h1>Editorial Blog &amp; VIP Masterclasses</h1>
+      <p style="max-width:640px; margin:0 auto 24px; font-size:1.05rem; color:var(--text-body);">
+        Expert event planning guides, sangeet technical rider specifications, live music trends, and lawyer-drafted escrow templates.
+      </p>
+
+      <!-- Search Bar -->
+      <div class="blog-search-bar">
+        <span style="font-size:1.1rem; color:var(--text-muted);">🔍</span>
+        <input type="text" placeholder="Search guides, DJ setlists, rider specs, escrow..." oninput="searchBlogArticles(this.value)">
+      </div>
+
+      <!-- Filter Pills -->
+      <div class="blog-filter-pills-bar" style="justify-content:center; flex-wrap:wrap; margin-top:28px;">
+        <button class="blog-filter-pill active" onclick="filterBlogArticles('All', this)">All Articles</button>
+        <button class="blog-filter-pill" onclick="filterBlogArticles('Event Tips', this)">💡 Event Tips</button>
+        <button class="blog-filter-pill" onclick="filterBlogArticles('Music Guide', this)">🎧 Music Guides</button>
+        <button class="blog-filter-pill" onclick="filterBlogArticles('Industry News', this)">📈 Industry News</button>
+        <button class="blog-filter-pill" onclick="filterBlogArticles('Success Story', this)">✨ Success Stories</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section style="padding: 45px 0 90px;">
+    <div class="wrap">
+
+      <!-- Paid VIP Event Masterclasses Section -->
+      <div style="margin-bottom:60px;">
+        <div class="sec-head reveal">
+          <div>
+            <div class="eyebrow" style="color:#D97706;">👑 Premium Member Access</div>
+            <h2>Paid VIP Event Planning Masterclasses</h2>
+            <p>In-depth technical handbooks, printable rider audit checklists, and legal contract template bundles.</p>
+          </div>
+        </div>
+
+        <div class="paid-guides-grid">
+          <!-- Paid Guide 1 -->
+          <div class="paid-guide-card reveal">
+            <span class="paid-badge">VIP Masterclass</span>
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600" alt="Wedding Masterclass" class="paid-guide-cover">
+            <div class="paid-guide-body">
+              <span style="font-size:0.82rem; font-weight:700; color:#D97706; margin-bottom:6px;">4.9 ★ (182 buyers) · 45 Pages</span>
+              <h3 class="paid-guide-title">Destination Wedding Budgeting &amp; Sound Rider Masterclass (2026)</h3>
+              <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin-bottom:16px;">
+                Complete step-by-step handbook for auditing sound wattage, negotiating artist fees, and preventing venue audio delays.
+              </p>
+              <div class="paid-guide-price-row">
+                <div>
+                  <span style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); display:block;">One-Time Unlock</span>
+                  <span class="paid-price">₹499</span>
+                </div>
+                <button class="btn btn-gold" onclick="openPaidGuideModal('wedding-budget-masterclass')">Unlock Masterclass 🔒</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paid Guide 2 -->
+          <div class="paid-guide-card reveal">
+            <span class="paid-badge">Legal Kit</span>
+            <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=600" alt="Legal Kit" class="paid-guide-cover">
+            <div class="paid-guide-body">
+              <span style="font-size:0.82rem; font-weight:700; color:#D97706; margin-bottom:6px;">5.0 ★ (240 buyers) · Fillable Bundle</span>
+              <h3 class="paid-guide-title">Artist Escrow Contract &amp; Legal Template Kit</h3>
+              <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin-bottom:16px;">
+                Lawyer-drafted performer service agreements, cancellation refund calculators, and escrow dispute protection contracts (.docx + PDF).
+              </p>
+              <div class="paid-guide-price-row">
+                <div>
+                  <span style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); display:block;">One-Time Unlock</span>
+                  <span class="paid-price">₹299</span>
+                </div>
+                <button class="btn btn-gold" onclick="openPaidGuideModal('escrow-contract-templates')">Unlock Legal Kit 🔒</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Free Editorial Articles Grid -->
+      <div>
+        <div class="sec-head reveal">
+          <div>
+            <div class="eyebrow">Free Guides</div>
+            <h2>All Editorial Articles</h2>
+            <p>Click on any article card to read the full guide.</p>
+          </div>
+        </div>
+
+        <div class="blog-grid">
+          <div class="blog-card reveal" data-category="Event Tips" onclick="openBlogModal('wedding-singer')">
+            <div class="blog-photo"><img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&q=80&w=500" alt="Wedding singer"></div>
+            <div class="blog-body">
+              <span class="blog-tag">Event Tips</span>
+              <div class="blog-meta">May 12, 2026 · 5 min read</div>
+              <h4>How To Book The Perfect Wedding Singer</h4>
+              <p>Verify performance clips, outline sangeet requirements, and sign booking contracts with confidence.</p>
+              <span class="blog-read">Read Full Article ➔</span>
+            </div>
+          </div>
+
+          <div class="blog-card reveal" data-category="Music Guide" onclick="openBlogModal('right-dj')">
+            <div class="blog-photo"><img src="images/dj_edm_producer.png" alt="DJ party"></div>
+            <div class="blog-body">
+              <span class="blog-tag">Music Guide</span>
+              <div class="blog-meta">May 10, 2026 · 4 min read</div>
+              <h4>Choosing The Right DJ For Your Party</h4>
+              <p>Match your guest demographics to the perfect DJ artist and pack the dance floor all night.</p>
+              <span class="blog-read">Read Full Article ➔</span>
+            </div>
+          </div>
+
+          <div class="blog-card reveal" data-category="Industry News" onclick="openBlogModal('trends-2026')">
+            <div class="blog-photo"><img src="images/rock_fusion_band.png" alt="Live music trends"></div>
+            <div class="blog-body">
+              <span class="blog-tag">Industry News</span>
+              <div class="blog-meta">May 8, 2026 · 6 min read</div>
+              <h4>Top Event Entertainment Trends in 2026</h4>
+              <p>Sufi fusion bands, acoustic sets, and immersive audio-visual DJ sets dominate this wedding season.</p>
+              <span class="blog-read">Read Full Article ➔</span>
+            </div>
+          </div>
+
+          <div class="blog-card reveal" data-category="Success Story" onclick="openBlogModal('gala-success')">
+            <div class="blog-photo"><img src="images/emcee_comedian.png" alt="Success story"></div>
+            <div class="blog-body">
+              <span class="blog-tag">Success Story</span>
+              <div class="blog-meta">May 5, 2026 · 4 min read</div>
+              <h4>How ArtizenLive Made My Gala Memorable</h4>
+              <p>A behind-the-scenes look at connecting a corporate client with verified musicians via escrow.</p>
+              <span class="blog-read">Read Full Article ➔</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section>
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <div class="eyebrow" style="justify-content:center;">Planning An Event?</div>
+        <h2>We Have The Perfect Verified Artist For You!</h2>
+        <p>From grand weddings and sangeet functions to corporate galas and private concerts — we've got you covered.</p>
+        <a href="index.html#artists" class="btn btn-gold">Browse Verified Artists 🔒</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="index.html" class="logo"><span class="logo-mark"></span><span>ArtizenLive</span></a>
+          <p>India's leading platform to discover, connect, and book verified artists for weddings, corporate galas, and private celebrations with escrow security.</p>
+          <div class="social-row">
+            <a href="https://facebook.com" target="_blank" class="social-icon-btn facebook" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon-btn instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://linkedin.com" target="_blank" class="social-icon-btn linkedin" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="https://youtube.com" target="_blank" class="social-icon-btn youtube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About ArtizenLive</a></li>
+            <li><a href="index.html#how-it-works">How Escrow Works</a></li>
+            <li><a href="index.html#artists">Verified Artist Catalog</a></li>
+            <li><a href="blog.html">Industry Blog</a></li>
+            <li><a href="index.html#contact">Contact Concierge</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Policies &amp; Legal</h4>
+          <ul>
+            <li><a href="policies.html">📜 Policies &amp; Legal Center</a></li>
+            <li><a href="policies.html#privacy">🔒 Privacy Policy</a></li>
+            <li><a href="policies.html#escrow">🛡️ Escrow Guarantee</a></li>
+            <li><a href="policies.html#refund">↺ Refund &amp; Cancellation</a></li>
+            <li><a href="policies.html#terms">📄 Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Talent Categories</h4>
+          <ul>
+            <li><a href="index.html#artists">Singers &amp; Vocalists</a></li>
+            <li><a href="index.html#artists">DJs &amp; EDM Producers</a></li>
+            <li><a href="index.html#artists">Dancers &amp; Troupes</a></li>
+            <li><a href="index.html#artists">Rock &amp; Fusion Bands</a></li>
+            <li><a href="index.html#artists">Cinematic Shooters</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 ArtizenLive. All rights reserved.</span>
+        <span>Kolkata, West Bengal – 700108, India</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Paid VIP Guide Modal -->
+  <div class="modal" id="paidGuideModal">
+    <div class="modal-backdrop" onclick="closePaidGuideModal()"></div>
+    <div class="modal-card" style="max-width: 680px;">
+      <button class="modal-close" onclick="closePaidGuideModal()">&times;</button>
+      
+      <div id="paidCheckoutSection">
+        <span style="background:rgba(245,158,11,0.12); color:#D97706; font-size:0.8rem; font-weight:800; padding:4px 12px; border-radius:999px;">👑 VIP Masterclass Unlock</span>
+        <h2 id="paidGuideTitle" style="margin:14px 0 10px; font-size:1.5rem; color:var(--text-bright);">Destination Wedding Budgeting &amp; Sound Rider Masterclass</h2>
+        
+        <div id="paidGuidePreview" style="margin-bottom:20px;">
+          <!-- Preview injected dynamically -->
+        </div>
+
+        <form onsubmit="handlePaidGuideCheckout(event)" style="background:var(--surface-card); border:1px solid var(--card-border); padding:20px; border-radius:14px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <span style="font-weight:700; color:var(--text-bright);">Masterclass Price:</span>
+            <span class="paid-price" id="paidGuidePrice">₹499</span>
+          </div>
+          <input type="text" placeholder="Cardholder Name / UPI ID" style="width:100%; padding:12px 16px; margin-bottom:10px; border-radius:8px; border:1px solid var(--card-border); background:var(--input-bg); color:var(--text-bright);" required>
+          <input type="email" placeholder="Email Address for PDF Receipt" style="width:100%; padding:12px 16px; margin-bottom:16px; border-radius:8px; border:1px solid var(--card-border); background:var(--input-bg); color:var(--text-bright);" required>
+          <button type="submit" class="btn btn-gold w-full">Complete Unlock &amp; Access Guide 🔒</button>
+        </form>
+      </div>
+
+      <div id="paidUnlockedSection" style="display:none;">
+        <!-- Unlocked full content injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Free Article Reader Modal -->
+  <div class="modal" id="blogModal">
+    <div class="modal-backdrop" onclick="closeBlogModal()"></div>
+    <div class="modal-card blog-modal-card">
+      <button class="modal-close" onclick="closeBlogModal()">&times;</button>
+      <div class="blog-modal-header">
+        <div class="blog-modal-meta-bar">
+          <span class="blog-modal-tag" id="blogModalTag">Event Tips</span>
+          <span class="blog-modal-date" id="blogModalDate">May 12, 2026 · 5 min read</span>
+        </div>
+        <h2 class="blog-modal-title" id="blogModalTitle">How To Book The Perfect Wedding Singer</h2>
+        <div class="blog-author-box">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" alt="Author" class="blog-author-img" id="blogModalAuthorImg">
+          <div>
+            <div class="blog-author-name" id="blogModalAuthorName">Aanya Sharma</div>
+            <div class="blog-author-role" id="blogModalAuthorRole">Senior Event Producer</div>
+          </div>
+        </div>
+      </div>
+      <div class="blog-cover-wrapper">
+        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=800" alt="Cover" class="blog-cover-img" id="blogModalCover">
+      </div>
+      <div class="blog-article-body" id="blogModalContent"></div>
+      <div class="blog-modal-footer">
+        <span style="font-size:0.88rem; color:var(--text-muted);">Looking to book performers for your upcoming date?</span>
+        <button class="btn btn-gold" id="blogModalCtaBtn">Explore Verified Talent 🔒</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Auth Modal -->
+  <div class="modal" id="authModal">
+    <div class="modal-backdrop" onclick="closeAuthModal()"></div>
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeAuthModal()">&times;</button>
+      <div style="text-align:center; margin-bottom:24px;">
+        <span class="logo-mark" style="margin:0 auto 12px;"></span>
+        <h3>Welcome to ArtizenLive</h3>
+        <p style="color:var(--text-muted); font-size:0.88rem;">Login or register to manage your event talent bookings</p>
+      </div>
+      <form onsubmit="handleAuthSubmit(event)">
+        <input type="email" placeholder="Email Address" style="width:100%; padding:14px; margin-bottom:12px; border-radius:10px; border:1px solid var(--card-border); background:var(--input-bg); color:var(--text-bright);" required>
+        <input type="password" placeholder="Password" style="width:100%; padding:14px; margin-bottom:20px; border-radius:10px; border:1px solid var(--card-border); background:var(--input-bg); color:var(--text-bright);" required>
+        <button type="submit" class="btn btn-gold w-full">Sign In / Continue</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
